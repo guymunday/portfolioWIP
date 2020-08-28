@@ -4,7 +4,7 @@ let currentTheme = {
   currentTheme: () => {
     if (typeof window == undefined) {
       "light"
-    } else (window.localStorage.getItem("theme") == null) {
+    } else {
       window.localStorage.getItem("theme")
     }
   },
