@@ -1,12 +1,15 @@
 import React, { createContext, useReducer, useContext } from "react"
 
 let currentTheme = {
-  currentTheme:
-    typeof window === undefined
-      ? "light"
-      : window.localStorage.getItem("theme") == null
-      ? "light"
-      : window.localStorage.getItem("theme"),
+  currentTheme: () => {
+    if (typeof window === undefined) {
+      "light"
+    } else if (window.localStorage.getItem("theme") == null) {
+      "light"
+    } else {
+      window.localStorage.getItem("theme")
+    }
+  },
   cursorType: false,
   cursorStyles: ["pointer", "hovered", "white"],
 }
@@ -40,12 +43,15 @@ const globalReducer = (state, action) => {
 
 export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(globalReducer, {
-    currentTheme:
-      typeof window === undefined
-        ? "light"
-        : window.localStorage.getItem("theme") == null
-        ? "light"
-        : window.localStorage.getItem("theme"),
+    currentTheme: () => {
+      if (typeof window === undefined) {
+        "light"
+      } else if (window.localStorage.getItem("theme") == null) {
+        "light"
+      } else {
+        window.localStorage.getItem("theme")
+      }
+    },
     cursorType: false,
     cursorStyles: ["pointer", "hovered", "white"],
   })
