@@ -17,9 +17,7 @@ const HomeNotOnly = ({ onCursor }) => {
   const animation = useAnimation()
   const [featured, inView] = useInView({
     triggerOnce: true,
-    rootMargin: window.matchMedia("(max-width: 700px)").matches
-      ? "-100px"
-      : "-300px",
+    rootMargin: "-100px",
   })
 
   useEffect(() => {

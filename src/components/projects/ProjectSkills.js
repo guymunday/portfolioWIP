@@ -7,9 +7,7 @@ const ProjectSkills = props => {
   const animation = useAnimation()
   const [featured, inView] = useInView({
     triggerOnce: true,
-    rootMargin: window.matchMedia("(max-width: 700px)").matches
-      ? "-100px"
-      : "-200px",
+    rootMargin: "-100px",
   })
 
   useEffect(() => {

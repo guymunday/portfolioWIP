@@ -1,5 +1,9 @@
 import React, { useEffect } from "react"
-import { ProjectTwoColumnFlexPadding, ColumnOne, ColumnTwo } from "../../styles/projectStyles"
+import {
+  ProjectTwoColumnFlexPadding,
+  ColumnOne,
+  ColumnTwo,
+} from "../../styles/projectStyles"
 import { useAnimation } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 
@@ -7,9 +11,7 @@ const ProjectTwoColumnPadding = props => {
   const animation = useAnimation()
   const [featured, inView] = useInView({
     triggerOnce: true,
-    rootMargin: window.matchMedia("(max-width: 700px)").matches
-      ? "-100px"
-      : "-200px",
+    rootMargin: "-100px",
   })
 
   useEffect(() => {

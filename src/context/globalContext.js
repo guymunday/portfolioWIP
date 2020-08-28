@@ -1,7 +1,14 @@
 import React, { createContext, useReducer, useContext } from "react"
 
+
+let currentTheme = {
+  currentTheme: "light",
+  cursorType: false,
+  cursorStyles: ["pointer", "hovered", "white"],
+}
+
 //Define Conext
-const GlobalStateContext = createContext()
+const GlobalStateContext = createContext(currentTheme)
 const GlobalDispatchContext = createContext()
 
 //Reducer
