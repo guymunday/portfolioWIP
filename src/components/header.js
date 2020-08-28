@@ -42,11 +42,6 @@ const Header = ({ onCursor, setToggleMenu, toggleMenu }) => {
             onMouseLeave={onCursor}
           >
             <Link to="/">Guy Munday</Link>
-            {/* <span
-              onClick={toggleTheme}
-              onMouseEnter={() => onCursor("pointer")}
-              onMouseLeave={onCursor}
-            ></span> */}
           </Logo>
           <LightSwitch
             onClick={toggleTheme}

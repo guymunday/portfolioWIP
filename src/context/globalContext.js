@@ -2,7 +2,7 @@ import React, { createContext, useReducer, useContext } from "react"
 
 let currentTheme = {
   currentTheme:
-    typeof window !== undefined
+    typeof window === undefined
       ? "light"
       : window.localStorage.getItem("theme") == null
       ? "light"
@@ -41,7 +41,7 @@ const globalReducer = (state, action) => {
 export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(globalReducer, {
     currentTheme:
-      typeof window !== undefined
+      typeof window === undefined
         ? "light"
         : window.localStorage.getItem("theme") == null
         ? "light"
