@@ -5,6 +5,7 @@ const preferDefault = m => (m && m.default) || m
 
 
 exports.components = {
+  "component---cache-dev-404-page-js": hot(preferDefault(require("/Users/Guy/ar2/.cache/dev-404-page.js"))),
   "component---src-pages-404-js": hot(preferDefault(require("/Users/Guy/ar2/src/pages/404.js"))),
   "component---src-pages-ana-js": hot(preferDefault(require("/Users/Guy/ar2/src/pages/ana.js"))),
   "component---src-pages-human-js": hot(preferDefault(require("/Users/Guy/ar2/src/pages/human.js"))),

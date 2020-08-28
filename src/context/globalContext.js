@@ -7,7 +7,7 @@ let currentTheme = {
 }
 
 //Define Conext
-const GlobalStateContext = createContext(currentTheme)
+const GlobalStateContext = createContext()
 const GlobalDispatchContext = createContext()
 
 //Reducer
