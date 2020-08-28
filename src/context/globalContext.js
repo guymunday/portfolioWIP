@@ -2,11 +2,9 @@ import React, { createContext, useReducer, useContext } from "react"
 
 let currentTheme = {
   currentTheme: () => {
-    if (typeof window === undefined) {
+    if (typeof window == undefined) {
       "light"
-    } else if (window.localStorage.getItem("theme") == null) {
-      "light"
-    } else {
+    } else (window.localStorage.getItem("theme") == null) {
       window.localStorage.getItem("theme")
     }
   },
