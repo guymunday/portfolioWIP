@@ -1,7 +1,7 @@
 import React, { createContext, useReducer, useContext } from "react"
 
 let currentTheme = {
-  currentTheme: false,
+  currentTheme: "dark",
   cursorType: false,
   cursorStyles: ["pointer", "hovered", "white"],
 }
