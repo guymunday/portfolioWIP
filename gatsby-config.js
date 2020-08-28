@@ -11,12 +11,10 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [
-          `Inter`,
-        ],
-        display: 'swap'
-      }
-    }
+        fonts: [`Inter`],
+        display: "swap",
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
