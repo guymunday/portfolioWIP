@@ -1,10 +1,7 @@
 import React, { createContext, useReducer, useContext } from "react"
 
 let currentTheme = {
-  currentTheme:
-    window.localStorage.getItem("theme") == null
-      ? "light"
-      : window.localStorage.getItem("theme"),
+  currentTheme: false,
   cursorType: false,
   cursorStyles: ["pointer", "hovered", "white"],
 }
