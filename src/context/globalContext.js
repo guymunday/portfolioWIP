@@ -1,23 +1,7 @@
 import React, { createContext, useReducer, useContext } from "react"
 
-let state =
-  typeof window !== `undefined`
-    ? {
-        currentTheme:
-          window.localStorage.getItem("theme") == null
-            ? "light"
-            : window.localStorage.getItem("theme"),
-        cursorType: false,
-        cursorStyles: ["pointer", "hovered", "white"],
-      }
-    : {
-        currentTheme: "dark",
-        cursorType: false,
-        cursorStyles: ["pointer", "hovered", "white"],
-      }
-
 //Define Conext
-const GlobalStateContext = createContext(state)
+const GlobalStateContext = createContext()
 const GlobalDispatchContext = createContext()
 
 //Reducer
