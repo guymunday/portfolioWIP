@@ -1,15 +1,16 @@
 import React, { createContext, useReducer, useContext } from "react"
 
-if (typeof window !== `undefined`) {
-  let currentTheme = {
-    currentTheme:
-      window.localStorage.getItem("theme") == null
-        ? "light"
-        : window.localStorage.getItem("theme"),
-    cursorType: false,
-    cursorStyles: ["pointer", "hovered", "white"],
-  }
-}
+const currentTheme =
+  typeof window !== `undefined`
+    ? {
+        currentTheme:
+          window.localStorage.getItem("theme") == null
+            ? "light"
+            : window.localStorage.getItem("theme"),
+        cursorType: false,
+        cursorStyles: ["pointer", "hovered", "white"],
+      }
+    : null
 
 //Define Conext
 const GlobalStateContext = createContext(currentTheme)
