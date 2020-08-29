@@ -57,13 +57,13 @@ const Layout = ({ children }) => {
 
   const darkTheme = {
     background: "#17223b",
-    text: "#ffffff",
+    text: "rgb(255, 255, 255)",
     pink: "#ffa3af",
     green: "#80f06b",
   }
 
   const lightTheme = {
-    background: "#ffffff",
+    background: "rgb(255, 255, 255)",
     text: "#17223b",
     pink: "#ffa3af",
     green: "#80f06b",
