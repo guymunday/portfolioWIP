@@ -1,15 +1,14 @@
 import React, { createContext, useReducer, useContext } from "react"
 
-let currentTheme = {
-  currentTheme: () => {
-    if (typeof window == undefined) {
-      "light"
-    } else {
-      window.localStorage.getItem("theme")
-    }
-  },
-  cursorType: false,
-  cursorStyles: ["pointer", "hovered", "white"],
+if (typeof window !== `undefined`) {
+  let currentTheme = {
+    currentTheme:
+      window.localStorage.getItem("theme") == null
+        ? "light"
+        : window.localStorage.getItem("theme"),
+    cursorType: false,
+    cursorStyles: ["pointer", "hovered", "white"],
+  }
 }
 
 //Define Conext
