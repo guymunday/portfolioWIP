@@ -10,7 +10,11 @@ const currentTheme =
         cursorType: false,
         cursorStyles: ["pointer", "hovered", "white"],
       }
-    : null
+    : {
+        currentTheme: "light",
+        cursorType: false,
+        cursorStyles: ["pointer", "hovered", "white"],
+      }
 
 //Define Conext
 const GlobalStateContext = createContext(currentTheme)
