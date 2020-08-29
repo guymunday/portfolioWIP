@@ -1,5 +1,5 @@
 import React from 'react';
-import Terser from 'terser';
+// import Terser from 'terser';
 
 import {
   COLOR_MODE_KEY,
@@ -47,7 +47,7 @@ const MagicScriptTag = () => {
 
   let calledFunction = `(${boundFn})()`;
 
-  calledFunction = Terser.minify(calledFunction).code;
+  // calledFunction = Terser.minify(calledFunction).code;
 
   // eslint-disable-next-line react/no-danger
   return <script dangerouslySetInnerHTML={{ __html: calledFunction }} />;
