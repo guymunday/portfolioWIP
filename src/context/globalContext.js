@@ -11,7 +11,7 @@ const currentTheme =
         cursorStyles: ["pointer", "hovered", "white"],
       }
     : {
-        currentTheme: "light",
+        currentTheme: "dark",
         cursorType: false,
         cursorStyles: ["pointer", "hovered", "white"],
       }
