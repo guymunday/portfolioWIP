@@ -5,7 +5,7 @@ let currentTheme = {
   currentTheme:
     typeof window === `undefined` ||
     window.localStorage.getItem("theme") == null
-      ? "light"
+      ? "dark"
       : window.localStorage.getItem("theme"),
   cursorType: false,
   cursorStyles: ["pointer", "hovered", "white"],
@@ -43,7 +43,7 @@ export const GlobalProvider = ({ children }) => {
     currentTheme:
       typeof window === `undefined` ||
       window.localStorage.getItem("theme") == null
-        ? "light"
+        ? "dark"
         : window.localStorage.getItem("theme"),
     cursorType: false,
     cursorStyles: ["pointer", "hovered", "white"],
