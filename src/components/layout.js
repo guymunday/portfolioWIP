@@ -27,14 +27,14 @@ html {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     font-size: 16px;
-  
-  
+    color: ${props => props.theme.text};
 }
 body {
   font-size: 16px;
   line-height: 1.4;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background: ${props => props.theme.background};
+  color: ${props => props.theme.text};
   overscroll-behavior: none;
   overflow-x: hidden;
 }
@@ -42,7 +42,7 @@ body {
 
 const Layout = ({ children }) => {
   const dispatch = useGlobalDispatchContext()
-  const { cursorStyles, currentTheme } = useGlobalStateContext()
+  const  {cursorStyles, currentTheme } = useGlobalStateContext()
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
