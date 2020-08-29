@@ -8,30 +8,30 @@ export const Nav = styled(motion.div)`
   width: 100%;
   height: 100%;
   display: block;
-  background: ${props => props.theme.pink};
+  background: var(--color-secondary);
   color: #000;
   z-index: 100;
   overflow: hidden;
 `
 
 export const NavHeader = styled.div`
-         top: 60px;
-         position: relative;
-         @media (max-width: 768px) {
-           top: 30px;
-         }
-         h2 {
-           color: ${props => props.theme.background};
-           @media (max-width: 450px) {
-             display: none;
-           }
-         }
-         a {
-           font-weight: 600;
-           color: ${props => props.theme.background};
-           font-size: 1.5rem;
-         }
-       `
+  top: 60px;
+  position: relative;
+  @media (max-width: 768px) {
+    top: 30px;
+  }
+  h2 {
+    color: var(--color-background);
+    @media (max-width: 450px) {
+      display: none;
+    }
+  }
+  a {
+    font-weight: 600;
+    color: var(--color-background);
+    font-size: 1.5rem;
+  }
+`
 export const CloseNav = styled.div`
   button {
     transform-origin: center;
@@ -43,7 +43,7 @@ export const CloseNav = styled.div`
       width: 36px;
       height: 3px;
       display: block;
-      background: ${props => props.theme.background};
+      background: var(--color-background);
       margin: 8px;
     }
   }
@@ -73,7 +73,7 @@ export const NavList = styled.div`
         font-size: 1.4rem;
       }
       .link {
-        color: ${props => props.theme.background};
+        color: var(--color-background);
         position: relative;
         display: flex;
         align-items: center;
@@ -85,7 +85,7 @@ export const NavFooter = styled.div`
   bottom: 60px;
   position: relative;
   p {
-    color: ${props => props.theme.text};
+    color: var(--color-text);
     font-weight: 600;
     font-size: 1.2rem;
     @media (max-width: 768px) {
@@ -108,8 +108,8 @@ export const NavVideos = styled.div`
   }
   .reveal {
     width: 100%;
-    background: ${props => props.theme.pink};
     position: absolute;
+    background: var(--color-secondary);
     top: 0;
     bottom: 0;
     left: 0;

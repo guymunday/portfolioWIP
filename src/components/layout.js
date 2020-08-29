@@ -1,9 +1,7 @@
 import React, { useState } from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-
 //Styled Components
-import { createGlobalStyle, ThemeProvider } from "styled-components"
+import { createGlobalStyle } from "styled-components"
+import { ThemeProvider } from "./ThemeContext"
 import { normalize } from "styled-normalize"
 //Custom Cursor
 import CustomCursor from "../components/customCursor"
@@ -21,20 +19,21 @@ const GlobalStyle = createGlobalStyle`
 ${normalize}
 * {
   text-decoration: none;
-  cursor: none;
+  /* cursor: none; */
 }
 html {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     font-size: 16px;
-    color: ${props => props.theme.text};
+    background: var(--color-background);
+  color: var(--color-text);
 }
 body {
   font-size: 16px;
   line-height: 1.4;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background: ${props => props.theme.background};
-  color: ${props => props.theme.text};
+  background: var(--color-background);
+  color: var(--color-text);
   overscroll-behavior: none;
   overflow-x: hidden;
 }
@@ -42,47 +41,26 @@ body {
 
 const Layout = ({ children }) => {
   const dispatch = useGlobalDispatchContext()
-  const  {cursorStyles, currentTheme } = useGlobalStateContext()
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+  const { cursorStyles } = useGlobalStateContext() //currentTheme taken fromhere
 
   const [toggleMenu, setToggleMenu] = useState(false)
 
-  const darkTheme = {
-    background: "#17223b",
-    text: "rgb(255, 255, 255)",
-    pink: "#ffa3af",
-    green: "#80f06b",
-  }
-
-  const lightTheme = {
-    background: "rgb(255, 255, 255)",
-    text: "#17223b",
-    pink: "#ffa3af",
-    green: "#80f06b",
-  }
-
   const onCursor = cursorType => {
     cursorType = (cursorStyles.includes(cursorType) && cursorType) || false
-    dispatch({ type: "CURSOR_TYPE", cursorType: cursorType })
+    dispatch({
+      type: "CURSOR_TYPE",
+      cursorType: cursorType,
+    })
   }
 
   return (
-    <ThemeProvider theme={currentTheme === "dark" ? darkTheme : lightTheme}>
+    <ThemeProvider>
       <GlobalStyle />
       <CustomCursor toggleMenu={toggleMenu} />
       <Header
         onCursor={onCursor}
         toggleMenu={toggleMenu}
         setToggleMenu={setToggleMenu}
-        siteTitle={data.site.siteMetadata.title}
       />
       <Navigation
         toggleMenu={toggleMenu}
@@ -93,10 +71,6 @@ const Layout = ({ children }) => {
       <Footer onCursor={onCursor} />
     </ThemeProvider>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout

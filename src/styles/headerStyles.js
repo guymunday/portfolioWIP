@@ -18,8 +18,7 @@ export const Logo = styled.div`
            font-size: 1.8rem;
            text-decoration: none;
            font-weight: 700;
-           color: ${props => props.theme.text};
-           mix-blend-mode: color-burn;
+           color: var(--color-text);
            @media (max-width: 768px) {
              font-size: 1.3rem;
            }
@@ -36,6 +35,7 @@ const wiggle = keyframes`
 export const LightSwitch = styled.p`
   font-size: 1.8rem;
   transition: 0.2s ease;
+  position: relative;
   :hover {
     font-size: 2.8rem;
     animation: ${wiggle} 1s ease infinite;
@@ -53,7 +53,7 @@ export const Menu = styled.div`
       width: 36px;
       height: 3px;
       display: block;
-      background: ${props => props.theme.text};
+      background: var(--color-text);
       margin: 8px;
     }
   }

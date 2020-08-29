@@ -1,29 +1,28 @@
 import React, { createContext, useReducer, useContext } from "react"
 
-
-let currentTheme = {
-  currentTheme:
-    typeof window === `undefined` ||
-    window.localStorage.getItem("theme") == null
-      ? "dark"
-      : window.localStorage.getItem("theme"),
-  cursorType: false,
-  cursorStyles: ["pointer", "hovered", "white"],
-}
+// let currentTheme = {
+//   currentTheme:
+//     typeof window === `undefined` ||
+//     window.localStorage.getItem("theme") == null
+//       ? "dark"
+//       : window.localStorage.getItem("theme"),
+//   cursorType: false,
+//   cursorStyles: ["pointer", "hovered", "white"],
+// }
 
 //Define Conext
-const GlobalStateContext = createContext(currentTheme)
+const GlobalStateContext = createContext()
 const GlobalDispatchContext = createContext()
 
 //Reducer
 const globalReducer = (state, action) => {
   switch (action.type) {
-    case "TOGGLE_THEME": {
-      return {
-        ...state,
-        currentTheme: action.theme,
-      }
-    }
+    // case "TOGGLE_THEME": {
+    //   return {
+    //     ...state,
+    //     currentTheme: action.theme,
+    //   }
+    // }
     case "CURSOR_TYPE": {
       return {
         ...state,
@@ -40,11 +39,11 @@ const globalReducer = (state, action) => {
 
 export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(globalReducer, {
-    currentTheme:
-      typeof window === `undefined` ||
-      window.localStorage.getItem("theme") == null
-        ? "dark"
-        : window.localStorage.getItem("theme"),
+    // currentTheme:
+    //   typeof window === `undefined` ||
+    //   window.localStorage.getItem("theme") == null
+    //     ? "dark"
+    //     : window.localStorage.getItem("theme"),
     cursorType: false,
     cursorStyles: ["pointer", "hovered", "white"],
   })

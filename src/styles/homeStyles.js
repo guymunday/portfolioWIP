@@ -23,9 +23,9 @@ export const Content = styled(motion.h2)`
   margin: auto;
   font-size: 1.8rem;
   font-weight: 450;
-  color: ${props => props.theme.text};
+  color: var(--color-text);
   a {
-    color: ${props => props.theme.text};
+    color: var(--color-text);
     text-decoration: underline;
   }
   @media (max-width: 768px) {
@@ -43,7 +43,7 @@ export const ContentCover = styled(motion.div)`
   width: 100%;
   height: 100%;
   padding: 30px 0;
-  background: ${props => props.theme.text};
+  background: var(--color-primary);
 `
 
 //Featured Section
@@ -63,10 +63,10 @@ export const FeaturedContent = styled(motion.div)`
   max-width: 900px;
   margin: auto;
   box-sizing: border-box;
-  color: ${props => props.theme.text};
+  color: var(--color-text);
   video {
     box-sizing: border-box;
-    border: ${props => props.theme.pink} solid 1px;
+    border: var(--color-primary) solid 1px;
   }
   h2 {
     font-size: 1.4rem;
@@ -82,33 +82,33 @@ export const FeaturedContent = styled(motion.div)`
 `
 
 export const FeaturedVideo = styled.div`
-  z-index: -1;
-  display: block;
-  overflow: hidden;
-  position: relative;
-  object-fit: cover;
-  .gatsby-image-wrapper {
-    height: 100%;
-    object-fit: cover;
-    border: ${props => props.theme.pink} 2px solid;
-  }
-  .marquee {
-    position: absolute;
-    bottom: 0;
-    left: -20%;
-    width: 300%;
-    overflow: hidden;
-    transform-origin: left center;
-    transform: rotate(-45deg);
-    background: ${props => props.theme.pink};
-    box-shadow: 3px 3px 4px #17223b;
-    p {
-      white-space: nowrap;
-      color: ${props => props.theme.background};
-      animation: ${marquee} 25s linear infinite;
-    }
-  }
-`
+         z-index: -1;
+         display: block;
+         overflow: hidden;
+         position: relative;
+         object-fit: cover;
+         .gatsby-image-wrapper {
+           height: 100%;
+           object-fit: cover;
+           border: var(--color-primary) 2px solid;
+         }
+         .marquee {
+           position: absolute;
+           bottom: 0;
+           left: -20%;
+           width: 300%;
+           overflow: hidden;
+           transform-origin: left center;
+           transform: rotate(-45deg);
+           background: var(--color-primary);
+           box-shadow: 3px 3px 4px #17223b;
+           p {
+             white-space: nowrap;
+             color: var(--color-primary);
+             animation: ${marquee} 25s linear infinite;
+           }
+         }
+       `
 
 export const FeaturedProjects = styled.div`
   margin-top: 200px;

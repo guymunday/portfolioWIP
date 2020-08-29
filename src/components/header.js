@@ -3,28 +3,12 @@ import React, { useEffect } from "react"
 // Styled Components
 import { Container, Flex } from "../styles/globalStyles"
 import { HeaderNav, Logo, LightSwitch, Menu } from "../styles/headerStyles"
-
+import DarkToggle from "./DarkToggle"
 //context
-import {
-  useGlobalDispatchContext,
-  useGlobalStateContext,
-} from "../context/globalContext"
+import { useGlobalDispatchContext } from "../context/globalContext"
 
 const Header = ({ onCursor, setToggleMenu, toggleMenu }) => {
   const dispatch = useGlobalDispatchContext()
-  const { currentTheme } = useGlobalStateContext()
-
-  const toggleTheme = () => {
-    if (currentTheme === "dark") {
-      dispatch({ type: "TOGGLE_THEME", theme: "light" })
-    } else {
-      dispatch({ type: "TOGGLE_THEME", theme: "dark" })
-    }
-  }
-
-  useEffect(() => {
-    window.localStorage.setItem("theme", currentTheme)
-  }, [currentTheme])
 
   return (
     <HeaderNav
@@ -44,11 +28,11 @@ const Header = ({ onCursor, setToggleMenu, toggleMenu }) => {
             <Link to="/">Guy Munday</Link>
           </Logo>
           <LightSwitch
-            onClick={toggleTheme}
+            // onClick={toggleTheme}
             onMouseEnter={() => onCursor("pointer")}
             onMouseLeave={onCursor}
           >
-            {currentTheme === "dark" ? "🌞" : "🌚"}
+            <DarkToggle />
           </LightSwitch>
           <Menu
             onClick={() => setToggleMenu(!toggleMenu)}
