@@ -28,14 +28,19 @@ const globalReducer = (state, action) => {
 //Provider
 
 export const GlobalProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(globalReducer, {
-    currentTheme:
-      window.localStorage.getItem("theme") == null
-        ? "light"
-        : window.localStorage.getItem("theme"),
-    cursorType: false,
-    cursorStyles: ["pointer", "hovered", "white"],
-  })
+  const [state, dispatch] = useReducer(
+    globalReducer,
+    typeof window !== `undefined`
+      ? {
+          currentTheme:
+            window.localStorage.getItem("theme") == null
+              ? "light"
+              : window.localStorage.getItem("theme"),
+          cursorType: false,
+          cursorStyles: ["pointer", "hovered", "white"],
+        }
+      : null
+  )
 
   return (
     <GlobalDispatchContext.Provider value={dispatch}>

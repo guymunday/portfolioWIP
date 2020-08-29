@@ -40,9 +40,6 @@ body {
 }
 `
 
-let currentTheme = {}
-let cursorStyles = {}
-
 const Layout = ({ children }) => {
   const dispatch = useGlobalDispatchContext()
   const { cursorStyles, currentTheme } = useGlobalStateContext()
