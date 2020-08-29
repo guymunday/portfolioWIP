@@ -1,6 +1,6 @@
 import React, { createContext, useReducer, useContext } from "react"
 
-const currentTheme =
+let state =
   typeof window !== `undefined`
     ? {
         currentTheme:
@@ -17,7 +17,7 @@ const currentTheme =
       }
 
 //Define Conext
-const GlobalStateContext = createContext(currentTheme)
+const GlobalStateContext = createContext(state)
 const GlobalDispatchContext = createContext()
 
 //Reducer
