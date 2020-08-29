@@ -57,7 +57,7 @@ const Layout = ({ children }) => {
 
   const darkTheme = {
     background: "#17223b",
-    text: "#fffff",
+    text: "#ffffff",
     pink: "#ffa3af",
     green: "#80f06b",
   }
